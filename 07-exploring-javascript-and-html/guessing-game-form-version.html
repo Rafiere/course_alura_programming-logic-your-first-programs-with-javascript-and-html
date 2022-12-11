@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guessing Game - Form Version</title>
+  </head>
+  <body>
+    <h1>Guessing Game - Form Version</h1>
+
+    <label for="guess">Try to guess our secret number between 1 and 100</label>
+    <input id="guess-input" type="number" />
+
+    <button id="check-button" onclick="check">Check</button>
+
+    <script>
+      let secret = randomNumberBetween1And100();
+
+      const button = document.getElementById("check-button");
+
+      const inputText = document.getElementById("guess-input");
+
+      function randomNumberBetween1And100() {
+        return Math.floor(Math.random() * 100) + 1;
+      }
+
+      function start() {
+        const check = () => {
+          if (inputText.value == secret) {
+            window.alert("Congratulations! You guessed correctly.");
+          } else if (inputText.value < secret) {
+            window.alert("Your number is lesser than secret number.");
+          } else if (inputText.value > secret) {
+            window.alert("Your number is greater than secret number.");
+          } else {
+            console.log("Something wrong happened.");
+          }
+          inputText.focus();
+        };
+        button.onclick = check;
+      }
+
+      start();
+    </script>
+  </body>
+</html>
