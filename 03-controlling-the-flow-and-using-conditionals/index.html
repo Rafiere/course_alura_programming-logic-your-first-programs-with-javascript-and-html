@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Controlling the Flow and Using Conditionals</title>
+  </head>
+  <body>
+    <h1>The guessing game</h1>
+
+    <script>
+      let name = window.prompt("Please, what's your name?");
+      let secretNumber = 42;
+
+      for (let i = 0; i <= 3; i++) {
+        let number = window.prompt("What is your guess for our secret number?");
+
+        if (secretNumber === Number(number)) {
+          window.alert("Congratulations! You guessed correctly.");
+          break;
+        } else if (secretNumber > Number(number)) {
+          window.alert("Your number is lesser than secret number.");
+        } else if (secretNumber < Number(number)) {
+          window.alert("Your number is greater than secret number.");
+        } else {
+          window.alert("Wait! Something wrong happened.");
+        }
+      }
+    </script>
+  </body>
+</html>
